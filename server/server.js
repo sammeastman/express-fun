@@ -21,4 +21,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 //     res.send(`Your name is ${name} and email is ${email}`);
 // });
 
+app.use((req, res, next) => {
+    console.log(req)
+    next();
+});
+
+app.use(express.static('public'))
+
 app.listen(3000);
